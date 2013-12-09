@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
 	validates :email, presence: true
 	validates :email, uniqueness: { case_sensitive: false }
-	validates :password, confirmaion: true
+	validates :password, confirmation: true
 
 	def userdef
 		@email = email
@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
 	before_save :hash_password
 
 	def authenticate(password)
-		sefl.hashed_password == 
+		self.hashed_password == 
 		BCrypt::Engine.hash_secret(password self.salt)
 	end
 

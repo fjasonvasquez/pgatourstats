@@ -34,15 +34,22 @@ end
 
 group :test, :development do
 	gem 'rspec-rails'
+	gem 'guard-rspec'
+	gem 'jasmine'
 	gem 'factory_girl_rails'
 	gem 'capybara'
 	gem 'selenium-webdriver'
 	gem 'database_cleaner'
-	gem 'jasmine'
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', github: 'codahale/bcrypt-ruby'
+
+group :production do
+	gem 'rails_12factor'
+	gem 'thin'
+end
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
