@@ -6,6 +6,7 @@ require 'rspec/autorun'
 require 'capybara/rails'
 require 'capybara/rspec'
 require 'database_cleaner'
+require 'factory_girl_rails'
 require 'jasmine'
 
 # Requires supporting ruby files with custom matchers and macros, etc,

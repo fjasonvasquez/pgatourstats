@@ -3,7 +3,13 @@ Pga::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root to: 'users#home'
+
+  resources :users, only: [:new, :create, :index]
+  delete '/users/new' => 'authentications#destroy'
+
+  resources :authentications, only: [:new, :create]
+end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
