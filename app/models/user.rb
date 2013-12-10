@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 	require 'bcrypt'
 
-	has_one :User
+	has_many :Users
 
 	validates :email, presence: true
 	validates :email, uniqueness: { case_sensitive: false }

@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.create(paras[:user].permit(:email, :password, :password_confiation))
+		@user = User.create(params[:user].permit(:email, :password, :password_confirmation))
 		if @user.save
 			session[:user_id] = @user.id
 			redirect_to root_url
