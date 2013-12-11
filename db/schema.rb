@@ -11,9 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20131211195024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "players", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "points", force: true do |t|
+    t.integer  "player_id"
+    t.integer  "tournament_id"
+    t.integer  "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "points", ["player_id"], name: "index_points_on_player_id", using: :btree
+  add_index "points", ["tournament_id"], name: "index_points_on_tournament_id", using: :btree
+
+  create_table "tournaments", force: true do |t|
+    t.string   "name"
+    t.float    "weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

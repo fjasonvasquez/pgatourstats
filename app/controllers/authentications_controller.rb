@@ -5,16 +5,15 @@ class AuthenticationsController < ApplicationController
 		#User logged in?
 		if current_user #Already logged in. Can't create same user.
 			redirect_to root_url
-
 		else
 			@user = User.new
 		end
 	end
 
 	def create
-		if user = User.fine_by(email: params[:user][:email])
+		if user = User.find_by(email: params[:user][:email])
 			#authenticate user
-			if user.authenticate(paras[:user][:password]) && if session[:user_id] = user.user_id 
+			if user.authenticate(params[:user][:password]) && if session[:user_id] = user.user_id 
 				redirect_to root_url
 			else
 				flash.now.alert = "There was something wrong with your login. Please try again."
