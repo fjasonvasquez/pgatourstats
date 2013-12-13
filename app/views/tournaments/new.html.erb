@@ -1,0 +1,23 @@
+<h1>Change Tournaments</h1>
+
+<%= form_for @tournament do |t|%>
+<p>
+		<%= t.label :name%>
+		<%= t.text_field :name %>
+</p>
+
+<p>
+		<%= t.label :weight, "Weight"%>
+		<%= t.text_field :weight%>
+</p>
+
+<p>
+		<%= t.label :rank, "Rank"%>
+		<%= t.text_field :rank %>
+</p>
+
+<p>
+<%= t.submit%>
+</p>
+
+<%end%>

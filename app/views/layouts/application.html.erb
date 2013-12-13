@@ -16,8 +16,8 @@
 		<a href="/"><div class="pga_logo"></div></a>
 		<div id="home_logout">
 			<div class="login">
-				<h1 class="logged"><<%= current_user[:email] %></h1>
-				<%= button_to "Log out", "/users/new", method: :delete, id 'logoutbutton' %>
+				<h1 class="logged"><%= current_user[:email] %></h1>
+				<%= button_to "Log out", "/users/new", method: :delete, id: 'logoutbutton' %>
 			</div>
 		</div>
 
@@ -28,7 +28,7 @@
 			<p>
 				<%= u.text_field :email, placeholder: "email" %>
 				<%= u.password_field :password, placeholder: "password" %>
-				<%=j button_to "login" %>
+				<%= button_to "login" %>
 			</p>
 			<% end %>
 		</div>

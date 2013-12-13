@@ -1,0 +1,25 @@
+<h1>Edit Tournament</h1>
+
+<%= form_for :tournament do |t|%>
+<p>
+		<%= t.label :name%>
+		<%= t.text_field :name %>
+</p>
+
+<p>
+		<%= t.label :weight, "Weight"%>
+		<%= t.text_field :weight %>
+</p>
+
+<p>
+		<%= t.label :rank, "rank"%>
+		<%= t.text_field :rank %>
+</p>
+
+<p>
+	<%= t.submit :Change %>
+</p>
+
+
+
+<%end%>
