@@ -3,8 +3,9 @@ Pga::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your  site routed with "root"
-  root to: 'users#new'
+  root to: 'players#index'
   resources :players
+  resources :tournaments
   resources :users, only: [:new, :create, :index]
   delete '/users/new' => 'authentications#destroy'
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131213021245) do
+ActiveRecord::Schema.define(version: 20131213232410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(version: 20131213021245) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "tournament"
+    t.integer  "rankt"
+    t.decimal  "rank"
   end
 
   create_table "points", force: true do |t|
@@ -44,6 +47,7 @@ ActiveRecord::Schema.define(version: 20131213021245) do
     t.float    "weight"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "rank"
   end
 
   create_table "users", force: true do |t|
