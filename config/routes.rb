@@ -11,6 +11,12 @@ Pga::Application.routes.draw do
 
   resources :authentications, only: [:new, :create]
 
+  get 'authentications/new' => 'authentications#new'
+  post 'authentications' => 'authentications#create'
+  get 'authentications/:id' => 'authentications#show'
+  delete 'authentications' => 'authentications#destroy'
+  put 'authentications/:id' => 'authentications#update'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

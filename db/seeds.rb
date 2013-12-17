@@ -11,6 +11,13 @@ Tournament.destroy_all
 p1 = Player.create(name:"Tiger Woods")
 p2 = Player.create(name:"Adam Scott")
 p3 = Player.create(name:"Hunter Mahan")
+p4
+p5
+p6
+p7
+p8
+p9
+p10
 T1 = Tournament.create(name: "US Masters", weight: 100)
 T2 = Tournament.create(name: "Northern Trust Open", weight: 25)
 p1.points.create tournament: T1, amount: 100

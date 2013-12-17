@@ -1,4 +1,4 @@
-<h1>Edit Tournament</h1>
+<h1>2013 Tournaments</h1>
 
 <%= form_for :tournament do |t|%>
 <p>
@@ -7,14 +7,14 @@
 </p>
 
 <p>
-		<%= t.label :weight, "Weight"%>
-		<%= t.text_field :weight %>
+		<%= t.label :points, "Points"%>
+		<%= t.text_field :points %>
 </p>
 
-<p>
+<!-- <p>
 		<%= t.label :rank, "rank"%>
 		<%= t.text_field :rank %>
-</p>
+</p> -->
 
 <p>
 	<%= t.submit :Change %>

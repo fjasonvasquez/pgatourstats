@@ -1,6 +1,6 @@
 class PointsController < ApplicationController
 
-			def index
+	def index
 		@points = Point.all
 	end
 
@@ -13,7 +13,7 @@ class PointsController < ApplicationController
 	end
 
 	def create
-		@point = Point.new(params[:point].permit(:name))
+		@point = Point.new(params[:point].permit(:amount))
 		@point.save
 		redirect_to points_path
 	end

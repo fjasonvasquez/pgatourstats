@@ -1,6 +1,6 @@
 class TournamentsController < ApplicationController
 
-			def index
+	def index
 		@tournaments = Tournament.all
 	end
 

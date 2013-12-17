@@ -1,20 +1,22 @@
 <h1>Edit Players</h1>
 
 <%= form_for @player do |p| %>
+<ol>
 <p>
 		<%= p.label :name%>
 		<%= p.text_field :name %>
 </p>
 
-<p>
+<!-- <p>
 		<%= p.label :tournament, "Tournament"%>
 		<%= p.text_field :tournament %>
 </p>
-
+ -->
 <p>
-		<%= p.label :rank, "Rank"%>
-		<%= p.text_field :rank %>
+		<%= p.label :points, "Points"%>
+		<%= p.text_field :points %>
 </p>
+</ol>
 
 <p>
 <%= p.submit%>

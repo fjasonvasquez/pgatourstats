@@ -1,12 +1,15 @@
 class PlayersController < ApplicationController
 
-		def index
+	def index
 		@players = Player.all
+		# puts Player.where(id:6).as_json[0]["name"]
 	end
 
 	def new
 		@player = Player.new
 	end
+
+
 
 	def show
 		@player = Player.find(params[:id])
@@ -14,6 +17,9 @@ class PlayersController < ApplicationController
 
 	def create
 		@player = Player.new(params[:player].permit(:name))
+		@points = Point.new(amount: params[:player][:points])
+		@player.points << @points
+		# STRONG PARAMS HERE
 		@player.save
 		redirect_to players_path
 	end
@@ -34,7 +40,7 @@ class PlayersController < ApplicationController
 
 	def destroy
 		Player.find(params[:id]).destroy
-		redirect_to workouts_url
+		redirect_to players_url
 	end
 
 end

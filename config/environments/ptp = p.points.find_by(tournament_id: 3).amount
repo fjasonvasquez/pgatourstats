@@ -1,0 +1,3 @@
+ptp = p.points.find_by(tournament_id: 3).amount
+
+ptw = p.tournaments.find(3).weight

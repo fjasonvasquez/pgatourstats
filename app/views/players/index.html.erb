@@ -1,24 +1,25 @@
 <%= session[:user_id] %>
 <h1>PGA World Rankings</h1>
-<h2>Stats as of 2013</h2>
+<h2>Stats for the 2013 season</h2>
 
 <table>
-    <tr>
+
+     <!--  <th>Rank</th> -->
       <th>Player Name</th>
-      <th>Tournament</th>
-      <th>Rank</th>
-      <th></th>
-    </tr>
- 
+      <!-- <th>Tournament</th> -->
+      <th>Points</th>
+
       <td><% @players.each do |player| %></td>
-    <tr>
-      <td><%= player.name %></td>
-      <td><%= player.points %></td>
-      <td><%= player.tournament %></td>
-      <td><%= button_to "delete", { action: "destroy", id: player.id},
-      {method: :delete, data:{confirm: "Are you sure?"}}%></td>
-      <td><%= link_to "edit", edit_player_path(player) %></td>
-      <br>
-    </tr>
+      <th>
+      <tr><%= player.name %></tr>
+      <% player.points.each do |point| %>
+      <tr><%= point.amount %></tr>
+      <% end %>
+      <tr><%= button_to "delete", { action: "destroy", id: player.id},
+      {method: :delete, data:{confirm: "Are you sure?"}}%></tr>
+      <tr><%= link_to "edit", edit_player_path(player) %></tr>
+    </th>
+
+
     <% end %>
 </table>
