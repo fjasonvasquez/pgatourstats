@@ -19,6 +19,8 @@ class PlayersController < ApplicationController
 		@player = Player.new(params[:player].permit(:name))
 		@points = Point.new(amount: params[:player][:points])
 		@player.points << @points
+		@tournaments = Tournament.new(params[:player][:tournaments])
+		@player.tournaments << @tournaments
 		# STRONG PARAMS HERE
 		@player.save
 		redirect_to players_path

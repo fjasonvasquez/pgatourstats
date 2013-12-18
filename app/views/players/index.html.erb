@@ -3,22 +3,23 @@
 <h2>Stats for the 2013 season</h2>
 
 <table>
-
-     <!--  <th>Rank</th> -->
+    <tr>
       <th>Player Name</th>
-      <!-- <th>Tournament</th> -->
       <th>Points</th>
+    </tr>
 
-      <td><% @players.each do |player| %></td>
-      <th>
-      <tr><%= player.name %></tr>
+    <tr>
+      <% @players.each do |player| %>
+      <td><%= player.name %></td>
       <% player.points.each do |point| %>
-      <tr><%= point.amount %></tr>
+      <td><%= point.amount %></td>
       <% end %>
-      <tr><%= button_to "delete", { action: "destroy", id: player.id},
-      {method: :delete, data:{confirm: "Are you sure?"}}%></tr>
-      <tr><%= link_to "edit", edit_player_path(player) %></tr>
-    </th>
+      <td><%= player.tournament %></td>
+      
+      <td><%= button_to "delete", { action: "destroy", id: player.id},
+      {method: :delete, data:{confirm: "Are you sure?"}}%></td>
+      <td><%= button_to "edit", edit_player_path(player) %></td>
+    </tr>
 
 
     <% end %>
