@@ -1,23 +1,11 @@
 <h1>Add Tournaments</h1>
 
+Paste in whatever from:
+<a href="http://www.officialworldgolfranking.com/players/bio.sps?ID=6430&name=Adam&Rank=2&TotalPts=393.43072">Official world golf ranking, some players' bio -- a guy named Adam</a><br />
+
+<br />
+
 <%= form_for @tournament do |t|%>
-<p>
-		<%= t.label :name%>
-		<%= t.text_field :name %>
-</p>
-
-<p>
-		<%= t.label :weight, "Weight"%>
-		<%= t.text_field :weight%>
-</p>
-
-<p>
-		<%= t.label :rank, "Rank"%>
-		<%= t.text_field :rank %>
-</p>
-
-<p>
-<%= t.submit :Add%>
-</p>
-
+	<%= text_area_tag :incoming, "", size:"50x30" %>
+	<%= t.submit :Add%>
 <%end%>

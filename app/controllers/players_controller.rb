@@ -2,7 +2,6 @@ class PlayersController < ApplicationController
 
 	def index
 		@players = Player.all
-		# puts Player.where(id:6).as_json[0]["name"]
 	end
 
 	def new
